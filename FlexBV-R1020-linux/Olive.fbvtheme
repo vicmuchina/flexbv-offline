@@ -1,0 +1,55 @@
+#
+# FlexBV Olive Theme configuration
+#
+colorTheme = light
+showLayerPinsFill = true
+
+backgroundColor		= 0xffffffff
+boardFillColor	= 0x616f61ff
+partOutlineColor = 0x44444400
+partHullColor			= 0x80808080
+partFillColor = 0xe3e3d3bb
+partHighlightedFillColor = 0xf0f0f0ff
+partHighlightedColor = 0xff0000ff
+partTextColor			= 0xff3030ff
+partTextBackgroundColor			= 0xffff00ff
+
+boardOutlineColor			= 0x444444ff
+pinDefaultColor				= 0xa26e5788
+pinDefaultTextColor			= 0x000000ff
+pinGroundColor				= 0x768876ff
+pinNotConnectedColor		= 0xaaaaaaff
+pinTestPadColor				= 0x9e7e2dff
+pinTestPadFillColor				= 0xd6c68dff
+
+pinSelectedColor				= 0x8888ffff
+pinSelectedFillColor			= 0x8888ffff
+pinSelectedTextColor			= 0xffffffff
+
+pinSameNetColor			= 0x9999ffff
+pinSameNetFillColor		= 0x9999ffff
+pinSameNetTextColor		= 0x111111ff
+
+pinHaloColor			= 0x22ff2288
+
+pinNetWebColor = 0xff000044
+pinNetWebOSColor = 0x0000ff33
+
+annotationPopupTextColor = 0x000000ff
+annotationPopupBackgroundColor = 0xeeeeeeff
+annotationBoxColor = 0xff0000aa
+annotationStalkColor = 0x000000ff
+pinDefaultFillColor = 0xa26e5788
+
+pinA1PadColor = 0xcb4848ff
+
+pinDefaultFM = 1
+pinGroundFM = 1
+pinTestPadFM = 1
+pinA1PadFM = 1
+pinSelectedFM = 1
+pinSameNetFM = 1
+ghostPadColor = 0xe400ffb7
+ghostPadFM = 1
+ghostPadRadius = 15
+pinNotConnectedFM = 0

@@ -1,0 +1,48 @@
+showLayerPinsFill = true
+
+backgroundColor		= 0xffffffff
+boardFillColor	= 0xdbdbdbff
+partOutlineColor = 0x444444ff
+partHullColor			= 0x80808080
+partFillColor = 0xf6f6f6ca
+partHighlightedFillColor = 0xffffffff
+partHighlightedColor = 0x05ff00ff
+partTextColor			= 0xff3030ff
+partTextBackgroundColor			= 0xffff00ff
+
+boardOutlineColor			= 0x444444ff
+pinA1PadColor = 0xff000094
+pinDefaultColor				= 0x8888ffff
+pinDefaultTextColor			= 0x48485cff
+pinGroundColor				= 0xb7b7b7ff
+pinNotConnectedColor		= 0xdadadaff
+pinTestPadColor				= 0xbca749ff
+
+pinSelectedColor				= 0x5da156ff
+pinSelectedTextColor			= 0xffffffff
+
+pinSameNetColor			= 0x69c95fb4
+pinSameNetTextColor		= 0x111111ff
+
+pinHaloColor			= 0x22ff2288
+
+pinNetWebColor = 0xff000044
+pinNetWebOSColor = 0x0000ff33
+
+annotationPopupTextColor = 0x000000ff
+annotationPopupBackgroundColor = 0xeeeeeeff
+annotationBoxColor = 0xff0000aa
+annotationStalkColor = 0x000000ff
+
+colorTheme = light
+ghostPadColor = 0xd82ed4fe
+pinSameNetFM = 1
+ghostPadRadius = 15
+pinDefaultFM = 0
+ghostPadFM = 1
+pinGroundFM = 1
+pinNotConnectedFM = 0
+pinA1PadFM = 1
+pinTestPadFM = 1
+pinSelectedFM = 1
+pinHaloFM = 0

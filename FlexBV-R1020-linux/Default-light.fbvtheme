@@ -1,0 +1,63 @@
+#
+# FlexBV configuration
+#
+# Renderer options
+#  1 = OpenGL1
+#  2 = OpenGL3
+#  3 = OpenGLES2
+renderer=2
+
+windowX=1200
+windowY=700
+
+# Reference DPI is 96, increase if you have a higher density (ie, small 4K or 2K screen)
+dpi=96
+
+fontName = 
+fontSize = 20
+showInfoPanel = true
+infoPanelWidth = 300
+showLayerPins = true
+showLayerParts = true
+showLayerOutline = true
+showNetWeb = true
+pinSizeThresholdLow = 0
+pinShapeCircle = true
+pinShapeSquare = false
+
+slowCPU =       false
+showFPS =       false
+pinHalo =       false
+pinHaloDiameter = 1.1
+pinHaloThickness = 4
+
+fillParts =		true
+boardFill =		true
+boardFillSpacing = 1
+
+zoomFactor = 5
+zoomModifier = 5
+
+panFactor = 30
+panModifier = 5
+
+searchColumns = 4
+centerZoomSearchResults = true
+infoPanelCenterZoomNets = true
+infoPanelSelectPartsOnNet = true
+partZoomScaleOutFactor = 20.0
+
+# Flip board modes
+#  0: flip whole board in view port, shift-flip to flip around mouse ptr
+#  1: flip around mouse ptr, shift-flip to flip view port
+flipMode = 1
+
+showLayerAnnotations = true
+annotationBoxSize = 20
+annotationBoxOffset = 8
+#
+# There's two built in themes, light (default) and dark 
+#colorTheme = dark
+colorTheme = light
+pcbTheme = Default-light
+

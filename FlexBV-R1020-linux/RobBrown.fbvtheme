@@ -1,0 +1,53 @@
+#
+# Theme created by Rob Brown
+#
+
+colorTheme = dark
+backgroundColor		= 0x000000ff
+boardFillColor	= 0x65504d66
+partOutlineColor = 0x999999ff
+partHullColor			= 0x80808080
+partFillColor = 0x111111ff
+partHighlightedFillColor = 0x331111ff
+partHighlightedColor = 0xffffffff
+partTextColor			= 0x000000ff
+partTextBackgroundColor			= 0xcccc22ff
+boardOutlineColor			= 0x46433fff
+pinDefaultColor				= 0xfff4ac99
+pinDefaultTextColor			= 0xccccccff
+pinGroundColor				= 0x00ff0077
+pinNotConnectedColor		= 0x0000ffaa
+pinTestPadColor				= 0xfff4ac99
+pinTestPadFillColor				= 0xfff4ac99
+
+pinSelectedColor				= 0xff0000ff
+pinSelectedFillColor			= 0xff0000ff
+pinSelectedTextColor			= 0xffffffff
+
+pinSameNetColor			= 0x880000ff
+pinSameNetFillColor		= 0x880000ff
+pinSameNetTextColor		= 0x111111ff
+
+pinHaloColor			= 0xffffff88
+
+pinNetWebColor = 0xff888888
+pinNetWebOSColor = 0x8888ff88
+
+annotationPopupTextColor = 0xffffffff
+annotationPopupBackgroundColor = 0x888888ff
+annotationBoxColor = 0xcccc88ff
+annotationStalkColor = 0xaaaaaaff
+pinA1PadColor = 0xaa0000ff
+
+
+showLayerPinsFill = true
+
+ghostPadColor = 0xffffff88
+pinGroundFM = 1
+pinA1PadFM = 1
+pinTestPadFM = 1
+pinSelectedFM = 1
+pinSameNetFM = 1
+pinHaloFM = 0
+pinNotConnectedFM = 0
+pinDefaultFM = 1
