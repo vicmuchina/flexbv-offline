@@ -95,6 +95,19 @@ Boardview files can be obtained from:
 
 > ⚠️ **Note**: Many boardview files are password-protected or require premium forum access. Always respect copyright and licensing terms.
 
+## Sample Files Included
+
+This repository includes sample boardview files for testing:
+
+- **Lenovo E31-70** - LA-C311P motherboard (`.brd` Allegro format)
+- **HP EliteBook 820 G2** - Snickers 6050A2635701 (`.cad` format)
+
+To test FlexBV with these files:
+```bash
+./run-flexbv.sh sample-boardviews/Lenovo_E31-70_LA-C311P_Actual.brd
+./run-flexbv.sh sample-boardviews/HP_EliteBook_820_G2.cad
+```
+
 ## Troubleshooting
 
 ### "Error opening file: Resource temporarily unavailable"
@@ -133,9 +146,17 @@ This package is distributed for **educational and repair purposes only**.
 
 ## Credits
 
-- **FlexBV** - Paul Daniels (@pldaniels)
-- **Patch** - CipherHater Project
+- **FlexBV** - Paul Daniels ([pldaniels.com](https://pldaniels.com/flexbv5/))
+- **License Patch** - CipherHater Project ([GitHub](https://github.com/SasoriXX/CipherHater/blob/master/flexbv.md))
 - **Dependencies** - Ubuntu 24.04 repositories
+
+## Acknowledgments
+
+This package uses the FlexBV activation bypass from the **CipherHater Project**. 
+Original patch instructions and methodology documented at:
+https://github.com/SasoriXX/CipherHater/blob/master/flexbv.md
+
+Special thanks to the electronics repair community for maintaining boardview file collections.
 
 ## Support
 
