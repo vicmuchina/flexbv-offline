@@ -3,8 +3,11 @@
 [![FlexBV Version](https://img.shields.io/badge/FlexBV-R1020-blue)](https://pldaniels.com/flexbv5/)
 [![Platform](https://img.shields.io/badge/platform-Linux%20x86__64-lightgrey)]()
 [![Offline Ready](https://img.shields.io/badge/offline-ready-green)]()
+[![Patched](https://img.shields.io/badge/patched-via%20CipherHater-green)]()
 
-**FlexBV** is a professional boardview software for viewing and analyzing circuit board layouts. This package includes the **patched FlexBV R1020** with all required dependencies for **completely offline installation**.
+**FlexBV** is a professional boardview software for viewing and analyzing circuit board layouts. This package includes the **patched FlexBV R1020** (Linux x86_64) with all required dependencies for **completely offline installation**.
+
+> **Version**: R1020 | **Platform**: Linux x86_64 | **License**: No key required (patched)
 
 ## Features
 
@@ -13,52 +16,73 @@
 ✅ **Patched & Activated** - Free edition with license bypass applied  
 ✅ **Multi-Format Support** - `.brd`, `.tvw`, `.cad`, `.asc`, `.fz`, `.fbv`, and more  
 ✅ **PDF Integration** - Includes fbvpdf for schematic viewing  
+✅ **Firewall Script** - Blocks activation servers for offline use
 
 ## Quick Start
-
-### Installation
 
 ```bash
 # Clone the repository
 git clone https://github.com/vicmuchina1234/flexbv-offline.git
 cd flexbv-offline
 
-# Run the installer
+# Run the installer (extracts dependencies)
 chmod +x scripts/install.sh
 ./scripts/install.sh
-```
 
-### Running FlexBV
+# Optional: Block activation servers (requires sudo)
+sudo ./scripts/setup-firewall.sh
 
-```bash
 # Launch FlexBV boardviewer
 ./run-flexbv.sh
 
 # Or open a specific boardview file
-./run-flexbv.sh /path/to/boardview.brd
-
-# Launch PDF schematic viewer
-./run-fbvpdf.sh /path/to/schematic.pdf
+./run-flexbv.sh sample-boardviews/HP_EliteBook_820_G2.cad
 ```
+
+## What's Included
+
+| Component | Description |
+|-----------|-------------|
+| FlexBV R1020 | Patched binary (no license required) |
+| fbvpdf | PDF schematic viewer |
+| 16 Dependencies | SDL2, PulseAudio, audio codecs |
+| Firewall Script | Blocks 27.50.89.128 (activation server) |
+| Patch Script | Original flexbv_free.sh from CipherHater |
+| Sample Files | HP EliteBook 820 G2, Lenovo E31-70 |
 
 ## File Structure
 
 ```
 flexbv-offline/
-├── FlexBV-R1020-linux/      # FlexBV application
-│   ├── flexbv              # Main executable (patched)
+├── FlexBV-R1020-linux/      # FlexBV application (patched)
+│   ├── flexbv              # Main executable
 │   ├── fbvpdf              # PDF viewer
 │   └── *.fbvtheme          # UI themes
-├── libs/                    # All offline dependencies
-│   ├── libsdl2-2.0-0*.deb
-│   ├── libpulse0*.deb
-│   └── ... (16 packages total)
-├── sample-boardviews/       # Sample boardview files
+├── libs/                    # 16 dependency packages
+├── sample-boardviews/       # Test files (BRD, CAD)
 ├── scripts/
-│   └── install.sh          # One-command installer
+│   ├── install.sh          # One-command installer
+│   ├── setup-firewall.sh   # Block activation servers
+│   └── flexbv_patch.sh     # Original patch script
 ├── run-flexbv.sh           # Quick launcher
 ├── run-fbvpdf.sh           # PDF viewer launcher
 └── README.md
+```
+
+## Firewall Setup (Important!)
+
+After installation, block the FlexBV activation server:
+
+```bash
+# Run as root/sudo
+sudo ./scripts/setup-firewall.sh
+```
+
+This blocks: `27.50.89.128`
+
+Or manually:
+```bash
+sudo iptables -A OUTPUT -d 27.50.89.128/32 -j REJECT
 ```
 
 ## Supported Boardview Formats
@@ -139,6 +163,13 @@ export GDK_DPI_SCALE=2
 
 This package is distributed for **educational and repair purposes only**.
 
+After patching, FlexBV shows:
+```
+EMail: free@gmail.com
+ID/TXN_ID: 0000000000000000000000000000000
+Key: 0000000000000000000000000000000
+```
+
 - FlexBV Free Edition is provided by [pldaniels.com](https://pldaniels.com/flexbv5/free.php)
 - Boardview files and schematics are property of their respective manufacturers
 - Use only for legitimate repair and educational purposes
@@ -167,3 +198,5 @@ For this offline package, open an issue on GitHub.
 ---
 
 **Built for offline electronics repair workshops and educational institutions.**
+
+> *"We do not pay for programs that you do not know how to protect..."* - CipherHater

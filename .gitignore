@@ -13,10 +13,6 @@ imgui.ini
 .DS_Store
 Thumbs.db
 
-# Large sample files (add manually if needed)
-# sample-boardviews/*.brd
-# sample-boardviews/*.tvw
-
 # IDE files
 .idea/
 .vscode/
