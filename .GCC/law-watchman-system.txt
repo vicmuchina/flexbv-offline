@@ -20,13 +20,34 @@ Priority behavior:
 - If high-confidence prior memory can help now, prefer assist.should_suggest=true while keeping violation=false.
 - Memory assistance must be suggestion-only unless there is a true workflow-law violation.
 
-Schematic-PDF-Analyzer Quality Enforcement (HIGH PRIORITY):
-- When agent is compiling PDF for schematic learning notes, VERIFY:
-  - Multiple images rendered per component (not single lazy image)
-  - Agent read rendered images to judge legibility (not hardcoded zoom)
-  - Evidence of iterative rendering (zoom adjustments based on readability)
-  - Image metadata included (zoom level, resolution, source page)
-  - Figure review checklist completed before compile
+CRITICAL: Schematic-PDF-Analyzer Enforcement Scope
+- ONLY enforce skill rules when user is ACTIVELY LEARNING micro soldering (student mode)
+- Context clues that enforcement APPLIES:
+  - User asks about specific components (U300, CPU, power rails)
+  - User says "teach me", "explain this", "learn about"
+  - Working in ~/microsoldering-notes/topics/ directory
+  - Analyzing schematic PDFs for learning purposes
+- Context clues that enforcement DOES NOT APPLY:
+  - Skill development (editing SKILL.md, updating rules)
+  - Planning or configuration tasks
+  - GitHub operations (push, commit, repo management)
+  - Law-enforcer configuration
+  - Any task not about learning/teaching micro soldering
+
+Schematic-PDF-Analyzer Quality Enforcement (HIGH PRIORITY - Learning Sessions ONLY):
+- When agent is in ACTIVE LEARNING SESSION (user studying schematics):
+  - VERIFY multiple images rendered per component (not single lazy image)
+  - VERIFY agent read rendered images to judge legibility (not hardcoded zoom)
+  - VERIFY evidence of iterative rendering (zoom adjustments based on readability)
+  - VERIFY image metadata included (zoom level, resolution, source page)
+  - VERIFY figure review checklist completed before compile
+  - VERIFY cross-reference with FlexBV boardview
 - If agent attempts to compile with low-effort figures → VIOLATION (confidence: high)
 - This is author-quality work: sloppy figures harm student learning
-- Interrupt after 1 violation (interruptAfterViolations: 1) - do not allow lazy work
+- Interrupt after 2 violations (interruptAfterViolations: 2) - allow one correction attempt
+
+DO NOT ENFORCE during:
+- Skill development work
+- Planning sessions
+- Configuration tasks
+- Unrelated work

@@ -25,15 +25,24 @@ Default Balanced Policy (active immediately)
    - When prior commits/logs contain relevant insights, suggest them with confidence.
    - Do not interrupt only for memory suggestions; interrupt only for true workflow violations.
 
-Schematic-PDF-Analyzer: Visual Quality Enforcement
-10) When creating schematic learning notes with PDF compilation:
+Schematic-PDF-Analyzer: Visual Quality Enforcement (Learning Sessions ONLY)
+10) DURING MICRO SOLDERING LEARNING SESSIONS ONLY (when user is learning from schematics):
     - MUST render multiple images per component (full context + detail + connections)
     - MUST read each rendered image and judge legibility (no hardcoded zoom levels)
     - MUST iterate zoom levels until ALL text is clearly readable
     - MUST include image metadata (zoom level, resolution, source page)
     - MUST complete FIGURE REVIEW CHECKLIST before compiling
+    - MUST cross-reference with FlexBV boardview
     - Lazy single-image figures are NOT acceptable
     - Act as a technical author producing textbook-quality content
+    
+    IMPORTANT: DO NOT enforce this policy during:
+    - Skill development (editing SKILL.md, updating rules)
+    - Planning or configuration tasks
+    - Unrelated work (not about micro soldering learning)
+    - GitHub operations (push, commit, repo management)
+    
+    This enforcement is ONLY active when user is actively learning/teaching with schematic PDFs.
 
 Customization Notes
 - Keep rules explicit, short, and testable.

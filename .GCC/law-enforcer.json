@@ -168,44 +168,73 @@
         "interruptAfterViolations": 2
       },
       {
-        "id": "schematic_figure_quality_review_required",
+        "id": "schematic_learning_session_quality_enforcement",
         "enabled": true,
-        "description": "Before compiling PDF for schematic notes, must perform figure quality review with iterative rendering and multiple images.",
+        "description": "During micro soldering learning sessions (when user is learning from schematics), enforce high-quality visual figures and complete skill workflow. DO NOT enforce during skill development, planning, or unrelated tasks.",
         "severity": "high",
         "triggers": [
           "assistant_turn"
         ],
         "when": {
           "taskKeywords": [
-            "compile",
-            "latexmk",
-            "PDF",
-            "compile notes",
-            "compile to PDF"
+            "HP EliteBook",
+            "schematic",
+            "micro soldering",
+            "motherboard",
+            "U300",
+            "embedded controller",
+            "power rail",
+            "circuit analysis",
+            "FlexBV",
+            "boardview"
+          ],
+          "taskExcludes": [
+            "update the skill",
+            "edit SKILL.md",
+            "skill development",
+            "push to github",
+            "configure watchman",
+            "law-enforcer",
+            "plan",
+            "planning"
           ],
           "toolIncludes": [],
-          "toolExcludes": [],
+          "toolExcludes": [
+            "glob",
+            "grep"
+          ],
           "commandIncludes": [
-            "latexmk",
-            "pdflatex"
+            "microsoldering-notes",
+            "topics/",
+            "schematic.pdf"
           ],
           "commandRegex": [],
           "assistantIncludes": [
-            "compile",
-            "PDF"
+            "Learn about",
+            "understand the",
+            "explain this circuit",
+            "teach me",
+            "what does this component",
+            "show me the",
+            "analyze this schematic"
           ],
-          "outputIncludes": [],
+          "outputIncludes": [
+            "topics/",
+            "microsoldering-notes",
+            "devices/"
+          ],
           "debtFlags": []
         },
         "require": {
           "anyTools": [
             "read",
-            "bash"
+            "bash",
+            "write"
           ],
           "anyCommands": [],
-          "guidance": "Before compiling PDF: (1) Must render multiple images per component (overview + detail + connections), (2) Must read each rendered image and judge readability, (3) Must iterate zoom levels until text is legible, (4) Must include image metadata (zoom, resolution, page), (5) Must complete FIGURE REVIEW CHECKLIST. Do not compile with low-effort figures."
+          "guidance": "During learning sessions: (1) Render multiple images per component (overview + detail + connections), (2) Read each rendered image and judge readability - iterate zoom until text is legible, (3) Include image metadata (zoom, resolution, page), (4) Complete FIGURE REVIEW CHECKLIST before compile, (5) Cross-reference with FlexBV boardview, (6) Update notes dynamically based on what student needs. Do NOT compile with low-effort figures. DO NOT enforce this rule during skill development or planning tasks."
         },
-        "interruptAfterViolations": 1
+        "interruptAfterViolations": 2
       }
     ]
   },
