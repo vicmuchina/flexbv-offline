@@ -59,3 +59,11 @@ Branch created. No previous progress.
 **Approach:** N/A
 **Status:** active
 **Performance:** N/A
+
+### 7b9ee36 - 2026-03-12T17:44:57.872343Z
+**Summary:** Lesson 1 PDF now has ACTUAL IMAGES: Fixed image paths, copied to images/u300/. PDF shows U300 full page (3x) and pin detail (6x with KBC_PWR_ON visible).
+**Files Modified:** (see git diff)
+**Description:** Lesson 1 PDF now has ACTUAL IMAGES: Fixed image paths, copied to images/u300/. PDF shows U300 full page (3x) and pin detail (6x with KBC_PWR_ON visible).
+**Approach:** N/A
+**Status:** active
+**Performance:** N/A
