@@ -75,3 +75,11 @@ Branch created. No previous progress.
 **Approach:** N/A
 **Status:** active
 **Performance:** N/A
+
+### e43bcb5 - 2026-03-12T18:42:12.590497Z
+**Summary:** SKILL.md completely rewritten: (1) Build schematic index BEFORE teaching (per-page .md + JSON), (2) HTML lessons with PDF-ready layout (modular, one per topic), (3) Required sections: overview, theory, pinout, signals, failures, lab, (4) Internal image rendering for verification only (cleanup after 5), (5) University-level depth default, (6) Exact page+section references required
+**Files Modified:** (see git diff)
+**Description:** SKILL.md completely rewritten: (1) Build schematic index BEFORE teaching (per-page .md + JSON), (2) HTML lessons with PDF-ready layout (modular, one per topic), (3) Required sections: overview, theory, pinout, signals, failures, lab, (4) Internal image rendering for verification only (cleanup after 5), (5) University-level depth default, (6) Exact page+section references required
+**Approach:** N/A
+**Status:** active
+**Performance:** N/A
