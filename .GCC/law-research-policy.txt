@@ -1,0 +1,17 @@
+OpenContext Research Capture Policy (editable)
+
+Purpose
+- Decide whether recent research activity should require an OpenContext checkpoint.
+- This text is passed to the research-capture classifier model.
+
+Classification
+- require_capture=true for implementation-relevant external research:
+  docs/specs/papers/GitHub/similar-project findings that influenced decisions, fixes, architecture, or debugging strategy.
+- require_capture=false for routine local exploration with no meaningful external insight to preserve.
+- If activity appears similar to previously solved hurdles in GCC history, prefer require_capture=true.
+
+Output contract (strict JSON):
+- require_capture: boolean
+- reason: string
+- confidence: number (0..1)
+

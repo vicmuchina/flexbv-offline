@@ -1,0 +1,39 @@
+OpenContext Law Policy (editable)
+
+Purpose
+- This text policy is passed to the watchman model with session evidence.
+- This file ships with a default balanced policy so users can run immediately without writing custom rules first.
+
+Default Balanced Policy (active immediately)
+1) Keep OpenContext initialized for implementation work.
+   - If `.GCC` is missing, initialize before continuing.
+2) Checkpoint meaningful implementation progress with `opencontext commit`.
+   - Do not let long coding/test/edit loops run without checkpoints.
+3) Before retrying after actionable failures, consult previous attempts.
+   - Use `opencontext context --search` and/or `opencontext context --log --lines 80`.
+4) When docs/GitHub/similar-project research changes implementation direction, checkpoint the findings.
+   - Capture external insights so they survive compaction/handoffs.
+5) Prefer relevant MCP tools/skills/structured retrieval when available.
+   - Avoid brute-force retries when better context/research tools exist.
+6) For long-running terminal tasks (dev server/watch/repl), use PTY/background tooling.
+   - Avoid blocking shell flows when background execution tools are available.
+7) After session compaction, recover workflow state before normal work.
+   - Create a checkpoint and retrieve recent context history.
+8) Avoid noisy interruptions for non-actionable workflow noise.
+   - Read-only discovery, harmless CLI flag mistakes, and transient setup/network issues should not trigger interruption unless they clearly block implementation.
+9) Use OpenContext memory assistance as guidance, not force.
+   - When prior commits/logs contain relevant insights, suggest them with confidence.
+   - Do not interrupt only for memory suggestions; interrupt only for true workflow violations.
+
+Customization Notes
+- Keep rules explicit, short, and testable.
+- Mention concrete tool/skill/command names when needed.
+- Keep one rule per line or short numbered block.
+- You can edit this policy any time; changes apply on next watchman checks.
+
+Notes
+- Structured trigger logic belongs in .GCC/law-enforcer.json under custom.rules.
+- This file is the natural-language watchman policy (default + your custom edits).
+- Watchman system behavior prompt: .GCC/law-watchman-system.txt
+- Failure lookup classifier prompt: .GCC/law-failure-policy.txt
+- Research capture classifier prompt: .GCC/law-research-policy.txt

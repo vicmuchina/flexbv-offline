@@ -1,0 +1,176 @@
+{
+  "version": 1,
+  "mode": "interrupt_continue",
+  "cooldowns": {
+    "interruptionSeconds": 45,
+    "sameRuleSeconds": 120
+  },
+  "limits": {
+    "maxConsecutiveInjections": 4
+  },
+  "gcc": {
+    "requireInit": true,
+    "requireCheckpointEveryTools": 10,
+    "checkpointDebtJudgeMode": "model_only",
+    "requireFailedAttemptLookup": true,
+    "failureLookupPolicyFile": "law-failure-policy.txt",
+    "failureClassifierEnabled": true,
+    "failureClassifierMinConfidence": 0.7,
+    "failureClassifierRequireModelDecision": true,
+    "compactionCheckpointRequired": true,
+    "compactionDebtJudgeMode": "model_only",
+    "skipCheckpointDuringPlanningAgent": true,
+    "countReadOnlyToolsForCheckpoint": false
+  },
+  "mcp": {
+    "requireAwarenessAtSessionStart": true,
+    "requireUseWhenRelevant": true,
+    "usageReminderEveryTools": 8
+  },
+  "research": {
+    "requireCaptureOnDocsOrGithub": true,
+    "capturePolicyFile": "law-research-policy.txt",
+    "captureClassifierEnabled": true,
+    "captureClassifierMinConfidence": 0.7,
+    "captureClassifierRequireModelDecision": true,
+    "docsKeywords": [
+      "docs",
+      "readme",
+      "documentation",
+      "arxiv.org"
+    ]
+  },
+  "critic": {
+    "enabled": true,
+    "provider": "openai_compatible",
+    "baseUrl": "https://llm.chutes.ai/v1",
+    "endpointPath": "/chat/completions",
+    "authHeader": "authorization",
+    "apiKeyPrefix": "Bearer",
+    "headers": {},
+    "request": {},
+    "model": "chutesai/Mistral-Small-3.2-24B-Instruct-2506",
+    "modelFallbacks": [
+      "NousResearch/Hermes-4-14B",
+      "zai-org/GLM-4.6-FP8",
+      "deepseek-ai/DeepSeek-V3-0324-TEE"
+    ],
+    "apiKeyEnv": "CHUTES_API_KEY",
+    "modelEnv": "OPENCONTEXT_LAW_MODEL_ID",
+    "maxInputTokensOverride": 0,
+    "timeoutMs": 8000,
+    "maxTokensCritic": 120,
+    "maxTokensWatchman": 320,
+    "strictJsonRetryAttempts": 2,
+    "responseFormatStrategy": "json_schema_then_json_object"
+  },
+  "watchman": {
+    "enabled": true,
+    "inspectAssistantTurns": true,
+    "inspectToolCalls": false,
+    "inspectCompaction": true,
+    "inspectOnIdle": false,
+    "skipDuringPlanningAgent": true,
+    "dedupeSameViolationUntilResolved": true,
+    "minConfidence": 0.75,
+    "requireModelDecision": true,
+    "systemPromptFile": "law-watchman-system.txt",
+    "includeRecentMessages": 12,
+    "includeRecentToolCalls": 12,
+    "includeRecentAlerts": 12,
+    "includeRecentActionsAfterAlerts": 20
+  },
+  "observability": {
+    "traceEnabled": true,
+    "traceFile": "law-enforcer-trace.jsonl"
+  },
+  "memoryAssist": {
+    "enabled": true,
+    "suggestOnly": true,
+    "minSuggestConfidence": 0.82,
+    "maxCandidates": 8,
+    "maxSuggestions": 3,
+    "triggers": [
+      "assistant_turn"
+    ],
+    "includeAbandonedWarnings": true,
+    "cooldownSeconds": 120,
+    "historyBudgetEnabled": true,
+    "historyBudgetTargetFraction": 0.35,
+    "historyBudgetMinFraction": 0.30,
+    "historyBudgetMaxFraction": 0.40,
+    "historyContextWindowFallbackTokens": 128000,
+    "historyBudgetEstimateCharsPerToken": 4,
+    "historyBudgetPerCandidateOverheadTokens": 24,
+    "historyBudgetRecencyFraction": 0.5,
+    "historyBudgetSemanticFraction": 0.5,
+    "maxBudgetedCandidates": 160,
+    "minBudgetedCandidates": 8
+  },
+  "custom": {
+    "enabled": true,
+    "policyFile": "law-policy.txt",
+    "exemptAgentPatterns": [
+      "plan",
+      "planner"
+    ],
+    "escalation": {
+      "mode": "soft_then_hard",
+      "softViolationsBeforeInterrupt": 2,
+      "hardInterruptThreshold": 3,
+      "reminderCooldownSeconds": 60,
+      "resetOnCommit": true
+    },
+    "hints": {
+      "availableTools": [],
+      "availableSkills": [],
+      "preferredCommands": [],
+      "importantMcpServers": []
+    },
+    "rules": [
+      {
+        "id": "prefer_background_terminal_for_long_running",
+        "enabled": false,
+        "description": "For long-running dev/watch tasks, require background PTY tool usage.",
+        "severity": "high",
+        "triggers": [
+          "tool_call",
+          "assistant_turn"
+        ],
+        "when": {
+          "taskKeywords": [
+            "long-running",
+            "watch mode",
+            "dev server",
+            "background process"
+          ],
+          "toolIncludes": [],
+          "toolExcludes": [],
+          "commandIncludes": [
+            "npm run dev",
+            "pnpm dev",
+            "yarn dev"
+          ],
+          "commandRegex": [],
+          "assistantIncludes": [],
+          "outputIncludes": [],
+          "debtFlags": []
+        },
+        "require": {
+          "anyTools": [
+            "pty_spawn"
+          ],
+          "anyCommands": [
+            "pty_spawn"
+          ],
+          "guidance": "Use the PTY/background tool for long-running tasks instead of blocking bash."
+        },
+        "interruptAfterViolations": 2
+      }
+    ]
+  },
+  "agentGuide": {
+    "path": ".GCC/AGENT_GUIDE.txt",
+    "includeInWatchmanPayload": true
+  }
+}

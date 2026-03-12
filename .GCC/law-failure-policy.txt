@@ -1,0 +1,17 @@
+OpenContext Failure Lookup Policy (editable)
+
+Purpose
+- Decide whether a detected failure should require `opencontext context` lookup before retry.
+
+Classification
+- require_lookup=true for actionable implementation retries:
+  test failures, compiler/build errors, runtime exceptions, tracebacks, assertion failures.
+- require_lookup=false for setup/noise cases unless user policy marks them critical:
+  missing option/command, missing file during exploration, package-manager metadata issues,
+  transient network/infra failures.
+
+Output contract (strict JSON):
+- require_lookup: boolean
+- reason: string
+- confidence: number (0..1)
+

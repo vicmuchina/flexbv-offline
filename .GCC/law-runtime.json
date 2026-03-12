@@ -1,0 +1,16 @@
+{
+  "critic": {
+    "apiKey": "",
+    "model": "",
+    "modelFallbacks": [],
+    "baseUrl": "",
+    "endpointPath": "",
+    "authHeader": "authorization",
+    "apiKeyPrefix": "Bearer",
+    "headers": {},
+    "request": {},
+    "apiKeyEnv": "",
+    "modelEnv": "",
+    "responseFormatStrategy": ""
+  }
+}
