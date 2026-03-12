@@ -205,7 +205,8 @@
           ],
           "commandIncludes": [
             "microsoldering-notes",
-            "topics/",
+            "lessons/",
+            "schematic-index/",
             "schematic.pdf"
           ],
           "commandRegex": [],
@@ -219,9 +220,10 @@
             "analyze this schematic"
           ],
           "outputIncludes": [
-            "topics/",
+            "lessons/",
             "microsoldering-notes",
-            "devices/"
+            "devices/",
+            "schematic-index/"
           ],
           "debtFlags": []
         },
@@ -232,7 +234,7 @@
             "write"
           ],
           "anyCommands": [],
-          "guidance": "During learning sessions: (1) Render multiple images per component (overview + detail + connections), (2) Read each rendered image and judge readability - iterate zoom until text is legible, (3) Include image metadata (zoom, resolution, page), (4) Complete FIGURE REVIEW CHECKLIST before compile, (5) Cross-reference with FlexBV boardview, (6) Update notes dynamically based on what student needs. Do NOT compile with low-effort figures. DO NOT enforce this rule during skill development or planning tasks."
+          "guidance": "During learning sessions: (1) Build schematic index BEFORE teaching (per-page .md + index.json), (2) Include required sections: overview, theory, pinout, signal paths, power states, failures, lab tasks, (3) Provide exact page + section references (e.g., p.46 §C3), (4) Trace signals across multiple pages, (5) Include test points with measurement values, (6) Use university-level depth (explain voltage regulation, modulation, etc.), (7) Clean up temp images after every 5 topics, (8) Write modular HTML lessons (one file per topic). DO NOT embed images in lessons. DO NOT enforce during skill development."
         },
         "interruptAfterViolations": 2
       }

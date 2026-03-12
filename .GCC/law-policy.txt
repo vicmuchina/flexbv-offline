@@ -25,16 +25,22 @@ Default Balanced Policy (active immediately)
    - When prior commits/logs contain relevant insights, suggest them with confidence.
    - Do not interrupt only for memory suggestions; interrupt only for true workflow violations.
 
-Schematic-PDF-Analyzer: Visual Quality Enforcement (Learning Sessions ONLY)
+Schematic-PDF-Analyzer: Lesson Quality Enforcement (Learning Sessions ONLY)
 10) DURING MICRO SOLDERING LEARNING SESSIONS ONLY (when user is learning from schematics):
-    - MUST render multiple images per component (full context + detail + connections)
-    - MUST read each rendered image and judge legibility (no hardcoded zoom levels)
-    - MUST iterate zoom levels until ALL text is clearly readable
-    - MUST include image metadata (zoom level, resolution, source page)
-    - MUST complete FIGURE REVIEW CHECKLIST before compiling
-    - MUST cross-reference with FlexBV boardview
-    - Lazy single-image figures are NOT acceptable
-    - Act as a technical author producing textbook-quality content
+    - MUST build schematic index BEFORE teaching (per-page .md + index.json)
+    - MUST include required sections: overview, theory, pinout, signal paths, power states, failures, lab tasks
+    - MUST provide exact page + section references (e.g., p.46 §C3)
+    - MUST trace signals across multiple pages
+    - MUST include test points with expected measurement values
+    - MUST use university-level depth (explain voltage regulation, modulation, etc.)
+    - MUST clean up temp images after every 5 topics
+    - MUST write modular HTML lessons (one file per topic, PDF-ready layout)
+    - MUST adjust depth if user requests simpler/more advanced
+    
+    DO NOT:
+    - Embed images in lessons (student has schematic PDF)
+    - Use vague references ("on page 46" - use "p.46 §C3" instead)
+    - Skip theory sections (explain HOW and WHY, not just WHAT)
     
     IMPORTANT: DO NOT enforce this policy during:
     - Skill development (editing SKILL.md, updating rules)

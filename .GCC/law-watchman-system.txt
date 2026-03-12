@@ -25,7 +25,7 @@ CRITICAL: Schematic-PDF-Analyzer Enforcement Scope
 - Context clues that enforcement APPLIES:
   - User asks about specific components (U300, CPU, power rails)
   - User says "teach me", "explain this", "learn about"
-  - Working in ~/microsoldering-notes/topics/ directory
+  - Working in ~/microsoldering-notes/lessons/ or schematic-index/ directory
   - Analyzing schematic PDFs for learning purposes
 - Context clues that enforcement DOES NOT APPLY:
   - Skill development (editing SKILL.md, updating rules)
@@ -36,14 +36,18 @@ CRITICAL: Schematic-PDF-Analyzer Enforcement Scope
 
 Schematic-PDF-Analyzer Quality Enforcement (HIGH PRIORITY - Learning Sessions ONLY):
 - When agent is in ACTIVE LEARNING SESSION (user studying schematics):
-  - VERIFY multiple images rendered per component (not single lazy image)
-  - VERIFY agent read rendered images to judge legibility (not hardcoded zoom)
-  - VERIFY evidence of iterative rendering (zoom adjustments based on readability)
-  - VERIFY image metadata included (zoom level, resolution, source page)
-  - VERIFY figure review checklist completed before compile
-  - VERIFY cross-reference with FlexBV boardview
-- If agent attempts to compile with low-effort figures → VIOLATION (confidence: high)
-- This is author-quality work: sloppy figures harm student learning
+  - VERIFY schematic index built BEFORE teaching (per-page .md + index.json)
+  - VERIFY required sections present: overview, theory, pinout, signal paths, power states, failures, lab tasks
+  - VERIFY exact page + section references (e.g., p.46 §C3, not "on page 46")
+  - VERIFY signals traced across multiple pages (source → destination)
+  - VERIFY test points included with expected measurement values
+  - VERIFY university-level depth (theory explained, not just facts)
+  - VERIFY temp images cleaned after every 5 topics
+  - VERIFY HTML lessons modular (one file per topic)
+  - VERIFY NO images embedded in lessons (student has schematic PDF)
+- If agent writes shallow lesson without required sections → VIOLATION (confidence: high)
+- If agent uses vague references → VIOLATION (confidence: medium)
+- This is textbook-quality work: shallow explanations harm student learning
 - Interrupt after 2 violations (interruptAfterViolations: 2) - allow one correction attempt
 
 DO NOT ENFORCE during:

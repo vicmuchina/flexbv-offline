@@ -83,3 +83,11 @@ Branch created. No previous progress.
 **Approach:** N/A
 **Status:** active
 **Performance:** N/A
+
+### 665e77b - 2026-03-12T18:51:04.483420Z
+**Summary:** Updated GCC law enforcement for new workflow: (1) law-enforcer.json: schematic index required, HTML lessons, no embedded images, required sections, (2) law-policy.txt: updated to match new workflow, (3) law-watchman-system.txt: verify index, sections, exact refs, cleanup after 5 topics
+**Files Modified:** (see git diff)
+**Description:** Updated GCC law enforcement for new workflow: (1) law-enforcer.json: schematic index required, HTML lessons, no embedded images, required sections, (2) law-policy.txt: updated to match new workflow, (3) law-watchman-system.txt: verify index, sections, exact refs, cleanup after 5 topics
+**Approach:** N/A
+**Status:** active
+**Performance:** N/A
