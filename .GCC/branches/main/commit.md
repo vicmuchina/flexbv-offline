@@ -51,3 +51,11 @@ Branch created. No previous progress.
 **Approach:** N/A
 **Status:** active
 **Performance:** N/A
+
+### bfec6d7 - 2026-03-12T17:39:06.932597Z
+**Summary:** Lesson 1 updated with ITERATIVE RENDERING: (1) 3x full page context, (2) 6x pin detail showing KBC_PWR_ON. Images judged for legibility before inclusion. PDF compiled with proper figures.
+**Files Modified:** (see git diff)
+**Description:** Lesson 1 updated with ITERATIVE RENDERING: (1) 3x full page context, (2) 6x pin detail showing KBC_PWR_ON. Images judged for legibility before inclusion. PDF compiled with proper figures.
+**Approach:** N/A
+**Status:** active
+**Performance:** N/A
