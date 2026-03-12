@@ -166,6 +166,46 @@
           "guidance": "Use the PTY/background tool for long-running tasks instead of blocking bash."
         },
         "interruptAfterViolations": 2
+      },
+      {
+        "id": "schematic_figure_quality_review_required",
+        "enabled": true,
+        "description": "Before compiling PDF for schematic notes, must perform figure quality review with iterative rendering and multiple images.",
+        "severity": "high",
+        "triggers": [
+          "assistant_turn"
+        ],
+        "when": {
+          "taskKeywords": [
+            "compile",
+            "latexmk",
+            "PDF",
+            "compile notes",
+            "compile to PDF"
+          ],
+          "toolIncludes": [],
+          "toolExcludes": [],
+          "commandIncludes": [
+            "latexmk",
+            "pdflatex"
+          ],
+          "commandRegex": [],
+          "assistantIncludes": [
+            "compile",
+            "PDF"
+          ],
+          "outputIncludes": [],
+          "debtFlags": []
+        },
+        "require": {
+          "anyTools": [
+            "read",
+            "bash"
+          ],
+          "anyCommands": [],
+          "guidance": "Before compiling PDF: (1) Must render multiple images per component (overview + detail + connections), (2) Must read each rendered image and judge readability, (3) Must iterate zoom levels until text is legible, (4) Must include image metadata (zoom, resolution, page), (5) Must complete FIGURE REVIEW CHECKLIST. Do not compile with low-effort figures."
+        },
+        "interruptAfterViolations": 1
       }
     ]
   },

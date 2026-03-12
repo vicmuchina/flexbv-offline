@@ -19,3 +19,14 @@ Priority behavior:
 - Prefer waiting for persistent/repeated signals before interrupting on non-critical workflow issues.
 - If high-confidence prior memory can help now, prefer assist.should_suggest=true while keeping violation=false.
 - Memory assistance must be suggestion-only unless there is a true workflow-law violation.
+
+Schematic-PDF-Analyzer Quality Enforcement (HIGH PRIORITY):
+- When agent is compiling PDF for schematic learning notes, VERIFY:
+  - Multiple images rendered per component (not single lazy image)
+  - Agent read rendered images to judge legibility (not hardcoded zoom)
+  - Evidence of iterative rendering (zoom adjustments based on readability)
+  - Image metadata included (zoom level, resolution, source page)
+  - Figure review checklist completed before compile
+- If agent attempts to compile with low-effort figures → VIOLATION (confidence: high)
+- This is author-quality work: sloppy figures harm student learning
+- Interrupt after 1 violation (interruptAfterViolations: 1) - do not allow lazy work

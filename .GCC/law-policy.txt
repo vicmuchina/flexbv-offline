@@ -25,6 +25,16 @@ Default Balanced Policy (active immediately)
    - When prior commits/logs contain relevant insights, suggest them with confidence.
    - Do not interrupt only for memory suggestions; interrupt only for true workflow violations.
 
+Schematic-PDF-Analyzer: Visual Quality Enforcement
+10) When creating schematic learning notes with PDF compilation:
+    - MUST render multiple images per component (full context + detail + connections)
+    - MUST read each rendered image and judge legibility (no hardcoded zoom levels)
+    - MUST iterate zoom levels until ALL text is clearly readable
+    - MUST include image metadata (zoom level, resolution, source page)
+    - MUST complete FIGURE REVIEW CHECKLIST before compiling
+    - Lazy single-image figures are NOT acceptable
+    - Act as a technical author producing textbook-quality content
+
 Customization Notes
 - Keep rules explicit, short, and testable.
 - Mention concrete tool/skill/command names when needed.
